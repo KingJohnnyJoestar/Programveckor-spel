@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 73317936}
   - component: {fileID: 73317935}
   - component: {fileID: 73317934}
-  - component: {fileID: 73317937}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -212,21 +211,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &73317937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73317933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a02067bf4acb44f9f19c8dd762502b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraCode
-  player: {fileID: 283836589}
-  maxXDistance: 4
-  maxYDistance: 4
 --- !u!1 &283836585
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +225,7 @@ GameObject:
   - component: {fileID: 283836586}
   - component: {fileID: 283836590}
   m_Layer: 0
-  m_Name: player
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,11 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb4cf96bc594b44f92b41badea0eac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  movementSpeed: 25
+  movementSpeed: 10
   maxSpeed: 8
-  jumpSpeed: 40
-  maxJumpFrames: 15
-  stopSpeed: 0.4
+  jumpSpeed: 20
+  maxJumpFrames: 20
+  stopSpeed: 0.3
 --- !u!50 &283836587
 Rigidbody2D:
   serializedVersion: 5
@@ -279,7 +263,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
