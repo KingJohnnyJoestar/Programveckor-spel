@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     int jumptimer = 0;
     public int maxJumpFrames;
 
-
+    public float stopSpeed;
     int moveX = 0;
 
     void Start()
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         if ((Keyboard.current.zKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame) && touchingGround()) // start off jump
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
+            //rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
             jumptimer = maxJumpFrames;
             Debug.Log("new jump");
         }
@@ -49,6 +49,33 @@ public class PlayerMovement : MonoBehaviour
     {
 
         rb.AddForce(new Vector2(movementSpeed * moveX, 0));
+        if (moveX == 0)
+        {
+            //rb.linearVelocityX = rb.linearVelocityX / 2;
+            if (rb.linearVelocityX > stopSpeed)
+            {
+                rb.linearVelocityX -= stopSpeed;
+            }
+            else if (rb.linearVelocityX < -stopSpeed)
+            {
+                rb.linearVelocityX += stopSpeed;
+            }
+            else
+            {
+                rb.linearVelocityX = 0;
+            }
+        }
+
+        if (rb.linearVelocityX > maxSpeed)
+        {
+            rb.linearVelocityX = maxSpeed;
+        }
+        else if (rb.linearVelocityX < -maxSpeed)
+        {
+            rb.linearVelocityX = -maxSpeed;
+        }
+
+
         if ((Keyboard.current.zKey.isPressed || Keyboard.current.spaceKey.isPressed) && jumptimer > 0)
         {
             rb.AddForce(new Vector2(0, jumpSpeed));

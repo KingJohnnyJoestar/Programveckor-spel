@@ -243,10 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb4cf96bc594b44f92b41badea0eac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  movementSpeed: 10
-  maxSpeed: 14
-  jumpSpeed: 20
-  maxJumpFrames: 50
+  movementSpeed: 25
+  maxSpeed: 8
+  jumpSpeed: 40
+  maxJumpFrames: 15
+  stopSpeed: 0.4
 --- !u!50 &283836587
 Rigidbody2D:
   serializedVersion: 5
@@ -262,7 +263,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
