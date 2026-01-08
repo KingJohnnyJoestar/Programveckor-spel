@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public float maxSpeed;
     public float jumpSpeed;
+    int jumptimer = 0;
+    public int maxJumpFrames;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,9 +30,25 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(-movementSpeed, 0));
         }
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && touchingGround()) // start off jump
         {
-
+            jumptimer = maxJumpFrames;
         }
+        if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space)) && jumptimer > 0)
+        {
+            rb.AddForce(new Vector2(0, jumpSpeed));
+        }
+        else
+        {
+            jumptimer = 0;
+        }
+        if (jumptimer > 0)
+        {
+            jumptimer--;
+        }
+    }
+    bool touchingGround()
+    {
+        return true; // temporär kod
     }
 }
