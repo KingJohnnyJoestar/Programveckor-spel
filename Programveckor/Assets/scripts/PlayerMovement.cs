@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     int jumptimer = 0;
     public int maxJumpFrames;
 
+
+    int moveX = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,22 +22,33 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
         {
-            rb.AddForce(new Vector2(-movementSpeed,0));
+            moveX = -1;
         }
         else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
         {
-            rb.AddForce(new Vector2(movementSpeed, 0));
+            moveX = 1;
         }
+        else
+        {
+            moveX = 0;
+        }
+
+
         if ((Keyboard.current.zKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame) && touchingGround()) // start off jump
         {
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
             jumptimer = maxJumpFrames;
+            Debug.Log("new jump");
         }
+
+
+    }
+    private void FixedUpdate()
+    {
+
+        rb.AddForce(new Vector2(movementSpeed * moveX, 0));
         if ((Keyboard.current.zKey.isPressed || Keyboard.current.spaceKey.isPressed) && jumptimer > 0)
         {
             rb.AddForce(new Vector2(0, jumpSpeed));
