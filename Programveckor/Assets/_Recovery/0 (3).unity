@@ -154,7 +154,7 @@ MonoBehaviour:
   Enemy: {fileID: 267919755}
   Player: {fileID: 1409805832}
   speed: 0.005
-  PlayerAlertDistance: 0
+  PlayerAlertDistance: 5
   PlayerChasseMaxDistance: 10
 --- !u!212 &267919757
 SpriteRenderer:
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   movementSpeed: 25
   maxSpeed: 8
-  jumpSpeed: 40
+  jumpSpeed: 50
   maxJumpFrames: 15
   stopSpeed: 0.4
   raycastDistance: 0
