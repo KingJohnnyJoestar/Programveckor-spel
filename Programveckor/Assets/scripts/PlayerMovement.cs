@@ -119,6 +119,10 @@ public class PlayerMovement : MonoBehaviour
     }
     public void die()
     {
+        if (rb.gravityScale < 0)
+        {
+            rb.gravityScale = -rb.gravityScale;
+        }
         Debug.Log("die");
         ResetPosition[] resetObjects = FindObjectsOfType<ResetPosition>();
         foreach (ResetPosition resetobj in resetObjects)
