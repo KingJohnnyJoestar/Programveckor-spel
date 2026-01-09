@@ -4,7 +4,7 @@ public class enemy_move : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float speed = 1;
-    public float PlayerAlertDistance = 5;
+    public float PlayerAlertDistance = 5; 
     public GameObject Enemy;
     public GameObject Player;
 
