@@ -17,21 +17,21 @@ public class CameraCode : MonoBehaviour
     {
         if (transform.position.x + maxXDistance < player.position.x)
         {
-            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(player.position.x - maxXDistance, transform.position.y, transform.position.z);
         }
         else if (transform.position.x - maxXDistance > player.position.x)
         {
-            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(player.position.x + maxXDistance, transform.position.y, transform.position.z);
         }
 
 
         if (transform.position.y + maxYDistance < player.position.y)
         {
-            transform.position = new Vector3(transform.position.x, player.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, player.position.y - maxYDistance, transform.position.z);
         }
         else if (transform.position.y - maxYDistance > player.position.y)
         {
-            transform.position = new Vector3(transform.position.x, player.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, player.position.y + maxYDistance, transform.position.z);
         }
     }
 }

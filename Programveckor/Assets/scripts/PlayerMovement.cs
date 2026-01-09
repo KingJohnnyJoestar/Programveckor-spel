@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float stopSpeed = 0.4f;
     int moveX = 0;
+    public float raycastDistance;
 
     void Start()
     {
@@ -91,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
     }
     bool touchingGround()
     {
-        return true; // temporär kod
+        //return Physics.Raycast(transform.position, -Vector3.up, raycastDistance);
+        return true;
     }
 }
