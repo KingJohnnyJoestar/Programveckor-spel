@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,14 +7,15 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     Rigidbody2D rb;
-    public float movementSpeed;
-    public float maxSpeed;
-    public float jumpSpeed;
+    public float movementSpeed = 25;
+    public float maxSpeed = 8;
+    public float jumpSpeed = 40;
     int jumptimer = 0;
-    public int maxJumpFrames;
+    public int maxJumpFrames = 15;
 
-    public float stopSpeed;
+    public float stopSpeed = 0.4f;
     int moveX = 0;
+    public float raycastDistance;
 
     void Start()
     {
@@ -91,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
     }
     bool touchingGround()
     {
-        return true; // temporär kod
+        //return Physics.Raycast(transform.position, -Vector3.up, raycastDistance);
+        return true;
     }
 }
