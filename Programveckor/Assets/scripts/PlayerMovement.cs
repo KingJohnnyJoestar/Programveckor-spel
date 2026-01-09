@@ -16,9 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public float stopSpeed = 0.4f;
     int moveX = 0;
     public float raycastDistance;
+    BoxCollider2D boxColl;
+    [SerializeField] LayerMask ground;
 
     void Start()
     {
+        boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -81,7 +84,15 @@ public class PlayerMovement : MonoBehaviour
 
         if ((Keyboard.current.zKey.isPressed || Keyboard.current.spaceKey.isPressed) && jumptimer > 0)
         {
-            rb.AddForce(new Vector2(0, jumpSpeed));
+            if (rb.gravityScale > 0)
+            {
+                rb.AddForce(new Vector2(0, jumpSpeed));
+
+            }
+            else
+            {
+                rb.AddForce(new Vector2(0, -jumpSpeed));
+            }
         }
         else
         {
@@ -94,7 +105,13 @@ public class PlayerMovement : MonoBehaviour
     }
     bool touchingGround()
     {
-        //return Physics.Raycast(transform.position, -Vector3.up, raycastDistance);
+        Vector2 direction = Vector2.down;
+        if(rb.gravityScale < 0)
+        {
+            direction = Vector2.up;
+        }
+        return Physics2D.BoxCast(boxColl.bounds.center, boxColl.bounds.size, 0f, direction, 0.1f, ground);
+        //return Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, ground);
         return true;
     }
 }
