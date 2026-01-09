@@ -2,6 +2,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,11 +19,13 @@ public class PlayerMovement : MonoBehaviour
     public float raycastDistance;
     BoxCollider2D boxColl;
     [SerializeField] LayerMask ground;
-
+    [SerializeField] int gameOverScene;
+    Vector2 respawnPos;
     void Start()
     {
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        respawnPos = transform.position;
     }
 
     // Update is called once per frame
@@ -112,6 +115,11 @@ public class PlayerMovement : MonoBehaviour
         }
         return Physics2D.BoxCast(boxColl.bounds.center, boxColl.bounds.size, 0f, direction, 0.1f, ground);
         //return Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, ground);
-        return true;
+    }
+    public void die()
+    {
+        Debug.Log("die");
+        transform.position = respawnPos;
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameOverScene));
     }
 }
