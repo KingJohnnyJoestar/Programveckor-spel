@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -118,7 +119,16 @@ public class PlayerMovement : MonoBehaviour
     }
     public void die()
     {
+        if (rb.gravityScale < 0)
+        {
+            rb.gravityScale = -rb.gravityScale;
+        }
         Debug.Log("die");
+        ResetPosition[] resetObjects = FindObjectsOfType<ResetPosition>();
+        foreach (ResetPosition resetobj in resetObjects)
+        {
+            resetobj.Reset();
+        }
         transform.position = respawnPos;
         //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameOverScene));
     }
