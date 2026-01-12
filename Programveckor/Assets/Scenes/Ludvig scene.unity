@@ -497,10 +497,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Emeow
   interactUI: {fileID: 1339009971}
   source: {fileID: 333192148}
-  sound1: {fileID: 8300000, guid: 054930242be20c2479978e14dd8f2acd, type: 3}
-  sound2: {fileID: 8300000, guid: ce94e2bc18d75ec43ae164b667170b7a, type: 3}
-  sound3: {fileID: 8300000, guid: 60c2aea5f0744b44b90436aafde7c5d8, type: 3}
-  sound4: {fileID: 8300000, guid: 549b080ee63d02e47ab40e2bfeedbc1e, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: 054930242be20c2479978e14dd8f2acd, type: 3}
+  - {fileID: 8300000, guid: ce94e2bc18d75ec43ae164b667170b7a, type: 3}
+  - {fileID: 8300000, guid: 60c2aea5f0744b44b90436aafde7c5d8, type: 3}
+  - {fileID: 8300000, guid: 549b080ee63d02e47ab40e2bfeedbc1e, type: 3}
 --- !u!61 &333192152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -960,7 +961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1339009972
 MonoBehaviour:
   m_ObjectHideFlags: 0
