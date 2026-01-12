@@ -147,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
         ResetPosition[] resetObjects = FindObjectsOfType<ResetPosition>();
         foreach (ResetPosition resetobj in resetObjects)
         {
-            resetobj.Reset();
+            resetobj.ResetPos();
         }
         //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameOverScene));
     }

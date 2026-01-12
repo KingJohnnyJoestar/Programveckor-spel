@@ -9,7 +9,7 @@ public class ResetPosition : MonoBehaviour
     {
         startPosition = transform.position;
     }
-    public virtual void Reset()
+    public virtual void ResetPos()
     {
         if (GetComponent<Rigidbody2D>())
         {

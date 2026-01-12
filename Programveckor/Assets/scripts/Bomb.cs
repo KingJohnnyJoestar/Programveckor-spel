@@ -4,7 +4,7 @@ public class Bomb : Item
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     bool active;
-    GameObject explosion;
+    public GameObject explosion;
     public override void Drop()
     {
         base.Drop();
@@ -15,9 +15,11 @@ public class Bomb : Item
         if (active && collision.gameObject.tag != "Player")
         {
             //döda fiender
-            //Instantiate(explosion);
-            GetComponent<ResetPosition>().Reset();
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            //GetComponent<ResetPosition>().ResetPosition();
+            gameObject.SetActive(false);
             active = false;
         }
     }
+
 }

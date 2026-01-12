@@ -14,6 +14,6 @@ public class EnemyHealth : MonoBehaviour
     }
     public virtual void die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
