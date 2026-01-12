@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Emeow : MonoBehaviour
+public class Emeow : InteractableObject
 {
     public AudioSource source;
 
@@ -13,15 +13,24 @@ public class Emeow : MonoBehaviour
     private float random;
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    if (Keyboard.current.eKey.wasPressedThisFrame)
+    //    {
+    //        if (collision.GetComponent<PlayerMovement>())
+    //        {
+    //            random = GetRandom();
+    //            PlayRandomSound(random);
+    //        }
+                
+    //    }
+    //}
+    public override void Interact()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            random = GetRandom();
-            PlayRandomSound(random);
-        }
+        base.Interact();
+        random = GetRandom();
+        PlayRandomSound(random);
     }
-
     private float GetRandom()
     {
         random = Random.Range(1, 5);
