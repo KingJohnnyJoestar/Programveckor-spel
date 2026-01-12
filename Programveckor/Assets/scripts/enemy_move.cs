@@ -33,19 +33,19 @@ public class enemy_move : MonoBehaviour
 
         if (ActiveAtack == true)
         {
-            Debug.Log("Attack true");
+            
             Chasse();
         }
         else
         {
             if (EnemySpawnPosition == Enemy.transform.position)
             {
-                Debug.Log("Nothing");
+                
                 return;
             }
             else
             {
-                Debug.Log("Returning");
+                
                 ReturninToSpawn();
             }
             
@@ -53,7 +53,7 @@ public class enemy_move : MonoBehaviour
     }
     private void Chasse() // Moves enemy towards player.
     {
-        Debug.Log("1");
+        
         Enemy.transform.position = Vector2.MoveTowards(Enemy.transform.position, Player.transform.position, speed);
         return;
     }
