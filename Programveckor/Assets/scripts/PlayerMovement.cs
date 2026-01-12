@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     Rigidbody2D rb;
     public float movementSpeed = 25;
+    public float waterSpeed;
     public float maxSpeed = 8;
+    public float waterMaxSpeed;
     public float jumpSpeed = 40;
     int jumptimer = 0;
     public int maxJumpFrames = 15;
@@ -58,7 +61,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        rb.AddForce(new Vector2(movementSpeed * moveX, 0));
+        if (DimensionChanger.dimension == 3)
+        {
+            rb.AddForce(new Vector2(waterSpeed * moveX, 0));
+        }
+        else
+        {
+            rb.AddForce(new Vector2(movementSpeed * moveX, 0));
+        }
         if (moveX == 0)
         {
             //rb.linearVelocityX = rb.linearVelocityX / 2;
@@ -75,16 +85,20 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocityX = 0;
             }
         }
-
-        if (rb.linearVelocityX > maxSpeed)
+        float currentMaxSpeed = maxSpeed;
+        if (DimensionChanger.dimension == 3)
         {
-            rb.linearVelocityX = maxSpeed;
+            currentMaxSpeed = waterMaxSpeed;
         }
-        else if (rb.linearVelocityX < -maxSpeed)
+        if (rb.linearVelocityX > currentMaxSpeed)
         {
-            rb.linearVelocityX = -maxSpeed;
+            rb.linearVelocityX = currentMaxSpeed;
         }
-
+        else if (rb.linearVelocityX < -currentMaxSpeed)
+        {
+            rb.linearVelocityX = -currentMaxSpeed;
+        }
+        
 
         if ((Keyboard.current.zKey.isPressed || Keyboard.current.spaceKey.isPressed) && jumptimer > 0)
         {
@@ -109,6 +123,7 @@ public class PlayerMovement : MonoBehaviour
     }
     bool touchingGround()
     {
+        //return true;
         Vector2 direction = Vector2.down;
         if(rb.gravityScale < 0)
         {

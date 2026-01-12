@@ -11,6 +11,10 @@ public class ResetPosition : MonoBehaviour
     }
     public void Reset()
     {
+        if (GetComponent<Rigidbody2D>())
+        {
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
+        }
         if (deleteOnReset)
         {
             Destroy(gameObject);
