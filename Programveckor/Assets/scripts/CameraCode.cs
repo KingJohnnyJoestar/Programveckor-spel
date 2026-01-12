@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class CameraCode : MonoBehaviour
     [SerializeField] Transform player;
     public float maxXDistance;
     public float maxYDistance;
+    [SerializeField] List<Color32> dimensionColors = new List<Color32>();
     void Start()
     {
         
@@ -33,5 +35,9 @@ public class CameraCode : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, player.position.y + maxYDistance, transform.position.z);
         }
+    }
+    public void SwitchDimension(int newDimension)
+    {
+        GetComponent<Camera>().backgroundColor = dimensionColors[newDimension];
     }
 }

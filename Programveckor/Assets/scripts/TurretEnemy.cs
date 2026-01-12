@@ -14,6 +14,7 @@ public class TurretEnemy : MonoBehaviour
     [SerializeField] float timeBetweenShots;
     float timer;
     [SerializeField] GameObject projectile;
+    public float projectileSpeed;
     public bool seePlayer;
     public Vector2 seePlayerAreaBottomLeft;
     public Vector2 seePlayerAreaTopRight;
@@ -55,11 +56,15 @@ public class TurretEnemy : MonoBehaviour
         }
         if (seePlayer)
         {
+            if (DimensionChanger.dimension == 3)
+            {
+                timer += Time.deltaTime * 3;
+            }
             timer += Time.deltaTime;
             if (timer > timeBetweenShots)
             {
                 timer = 0;
-                Vector2 movementDirection = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized;
+                Vector2 movementDirection = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized * projectileSpeed;
                 GameObject p = Instantiate(projectile, transform.position, Quaternion.identity);
                 p.GetComponent<Rigidbody2D>().linearVelocity = movementDirection;
                 float angle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg;
@@ -69,7 +74,7 @@ public class TurretEnemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (seePlayer)
+        if (seePlayer && DimensionChanger.dimension != 3)
         {
             if (player.position.x > transform.position.x && transform.position.x < maxXposition)
             {
