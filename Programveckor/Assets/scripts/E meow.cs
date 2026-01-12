@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,55 +6,57 @@ public class Emeow : InteractableObject
 {
     public AudioSource source;
 
-    public AudioClip sound1;  
-    public AudioClip sound2;
-    public AudioClip sound3;
-    public AudioClip sound4;
+    public List<AudioClip> sounds;
+    //public AudioClip sound1;  
+    //public AudioClip sound2;
+    //public AudioClip sound3;
+    //public AudioClip sound4;
 
-    private float random;
-
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Keyboard.current.eKey.wasPressedThisFrame)
-    //    {
-    //        if (collision.GetComponent<PlayerMovement>())
-    //        {
-    //            random = GetRandom();
-    //            PlayRandomSound(random);
-    //        }
-                
-    //    }
-    //}
+    //private float random;
+    private bool IsMeowing = false;
+    float timmer;
+    private void FixedUpdate()
+    {
+        timmer -= Time.fixedDeltaTime;
+    }
     public override void Interact()
     {
-        base.Interact();
-        random = GetRandom();
-        PlayRandomSound(random);
+        Debug.Log("meow " + timmer);
+        if (timmer < 0)
+        {
+            int random = GetRandom();
+            PlayRandomSound(random);
+        }
+        else {
+            return;
+        } 
     }
-    private float GetRandom()
+    private int GetRandom()
     {
-        random = Random.Range(1, 5);
+        int random = Random.Range(0, sounds.Count);
         return (random);
     }
-    private void PlayRandomSound(float random)
+    private void PlayRandomSound(int random)
     {
-        if (random == 1)
-        {
-            source.PlayOneShot(sound1);
-        }
-        if (random == 2)
-        {
-            source.PlayOneShot(sound2);
-        }
-        if (random == 3)
-        {
-            source.PlayOneShot(sound3);
-        }
-        if (random == 4)
-        {
-            source.PlayOneShot(sound4);
-        }
+        source.PlayOneShot(sounds[random]);
+        timmer = sounds[random].length;
+        //if (random == 1)
+        //{
+        //    source.PlayOneShot(sound1);
+        //}
+        //if (random == 2)
+        //{
+
+        //    source.PlayOneShot(sound2);
+        //}
+        //if (random == 3)
+        //{
+        //    source.PlayOneShot(sound3);
+        //}
+        //if (random == 4)
+        //{
+        //    source.PlayOneShot(sound4);
+        //}
     }
 }
 
