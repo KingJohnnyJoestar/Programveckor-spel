@@ -2,23 +2,18 @@ using UnityEngine;
 
 public class Idel : MonoBehaviour
 {
-    [Header("Float Settings")]
-    public float floatAmplitude = 0.5f; // Hur högt/lågt spöket rör sig
-    public float floatSpeed = 1f;        // Hur snabbt det rör sig
+    public float floatAmplitude = 0.3f;
+    public float floatSpeed = 2f;
 
-    private Vector3 startPosition;
+    private float lastYOffset;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        startPosition = transform.position;
-
-    }
-
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
-        transform.position = startPosition + new Vector3(0f, yOffset, 0f);
+        float delta = yOffset - lastYOffset;
+
+        transform.position += new Vector3(0f, delta, 0f);
+
+        lastYOffset = yOffset;
     }
 }
