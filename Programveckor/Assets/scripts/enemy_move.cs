@@ -14,7 +14,7 @@ public class enemy_move : MonoBehaviour
     public float EnemyChasseMaxDistance = 10; // Enemy minmum distances to discontinue an active chase
     
     // Enemy data (Can't be changed)
-    private Vector2 EnemySpawnPosition;
+    private Vector3 EnemySpawnPosition;
     private float Distance;
     private bool ActiveAtack; 
 
@@ -27,6 +27,7 @@ public class enemy_move : MonoBehaviour
     void Update()
     
     {
+        // Data to make atack calulation
         Distance = GetDistance(); 
         ActiveAtack = GetAtackValidationCalculation();
 
@@ -36,7 +37,14 @@ public class enemy_move : MonoBehaviour
         }
         else
         {
-            ReturninToSpawn();
+            if (EnemySpawnPosition == Enemy.transform.position){
+                return;
+            }
+            else
+            {
+                ReturninToSpawn();
+            }
+            
         }
     }
     private void Chasse() // Moves enemy towards player.
@@ -44,7 +52,7 @@ public class enemy_move : MonoBehaviour
         Enemy.transform.position = Vector2.MoveTowards(Enemy.transform.position, Player.transform.position, speed);
         return;
     }
-    private void ReturninToSpawn()
+    private void ReturninToSpawn() // Return enemy to starting postion
     {
         Enemy.transform.position = Vector2.MoveTowards(Enemy.transform.position, EnemySpawnPosition, speed);
         return;
