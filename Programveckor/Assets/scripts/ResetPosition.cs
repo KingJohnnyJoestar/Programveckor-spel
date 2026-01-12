@@ -9,11 +9,12 @@ public class ResetPosition : MonoBehaviour
     {
         startPosition = transform.position;
     }
-    public void Reset()
+    public virtual void Reset()
     {
         if (GetComponent<Rigidbody2D>())
         {
             GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
+            GetComponent<Rigidbody2D>().angularVelocity = 0f;
         }
         if (deleteOnReset)
         {

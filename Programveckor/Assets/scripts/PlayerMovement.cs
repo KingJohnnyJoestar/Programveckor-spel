@@ -134,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void die()
     {
+        GetComponent<PickUpObject>().Reset();
         rb.linearVelocityX = 0;
         rb.linearVelocityY = 0;
         //if (rb.gravityScale < 0)
@@ -149,5 +150,9 @@ public class PlayerMovement : MonoBehaviour
             resetobj.Reset();
         }
         //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameOverScene));
+    }
+    public int GetDirection()
+    {
+        return moveX;
     }
 }

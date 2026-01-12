@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4042419478121294591}
   - component: {fileID: 4521047325884671011}
   - component: {fileID: 1477425316011889602}
+  - component: {fileID: -5733476791945506419}
   m_Layer: 0
   m_Name: turret enemy
   m_TagString: Untagged
@@ -113,9 +114,11 @@ MonoBehaviour:
   maxSpeed: 6
   timeBetweenShots: 2
   projectile: {fileID: 7122027051178548403, guid: fdc4eb7c92e0faf41a0cda916e93f129, type: 3}
+  projectileSpeed: 0
   seePlayer: 0
   seePlayerAreaBottomLeft: {x: 16, y: 5}
   seePlayerAreaTopRight: {x: 30, y: 20}
+  seePlayerWhenClose: 0
 --- !u!114 &4042419478121294591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +206,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.8828125}
   m_EdgeRadius: 0
+--- !u!114 &-5733476791945506419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764629137343234412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bf085aee2685c4f8ac0c6d07761e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
