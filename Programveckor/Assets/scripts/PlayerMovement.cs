@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D boxColl;
     [SerializeField] LayerMask ground;
     [SerializeField] int gameOverScene;
-    Vector2 respawnPos;
+    public Vector2 respawnPos;
     void Start()
     {
         boxColl = GetComponent<BoxCollider2D>();
@@ -119,17 +119,20 @@ public class PlayerMovement : MonoBehaviour
     }
     public void die()
     {
-        if (rb.gravityScale < 0)
-        {
-            rb.gravityScale = -rb.gravityScale;
-        }
+        rb.linearVelocityX = 0;
+        rb.linearVelocityY = 0;
+        //if (rb.gravityScale < 0)
+        //{
+        //    rb.gravityScale = -rb.gravityScale;
+        //}
+        transform.position = respawnPos;
         Debug.Log("die");
+
         ResetPosition[] resetObjects = FindObjectsOfType<ResetPosition>();
         foreach (ResetPosition resetobj in resetObjects)
         {
             resetobj.Reset();
         }
-        transform.position = respawnPos;
         //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(gameOverScene));
     }
 }
