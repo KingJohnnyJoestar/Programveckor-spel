@@ -34,6 +34,17 @@ public class PickUpObject : MonoBehaviour
         }
         if (carryItem != null)
         {
+            if ((DimensionChanger.dimension == 2) == (GetComponent<BoxCollider2D>().offset == new Vector2(0, 0.5f)))
+            {
+                if (DimensionChanger.dimension == 2)
+                {
+                    GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.5f);
+                }
+                else
+                {
+                    GetComponent<BoxCollider2D>().offset = new Vector2(0, 0.5f);
+                }
+            }
             Vector2 itemPosition = transform.position;
             if (GetComponent<Rigidbody2D>().gravityScale > 0)
             {
@@ -52,7 +63,14 @@ public class PickUpObject : MonoBehaviour
         carryItem = item;
         cantDrop = true;
         GetComponent<BoxCollider2D>().size = new Vector2(1,2);
-        GetComponent<BoxCollider2D>().offset = new Vector2(0, 0.5f);
+        if (DimensionChanger.dimension == 2)
+        {
+            GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.5f);
+        }
+        else
+        {
+            GetComponent<BoxCollider2D>().offset = new Vector2(0, 0.5f);
+        }
     }
     public void drop()
     {
