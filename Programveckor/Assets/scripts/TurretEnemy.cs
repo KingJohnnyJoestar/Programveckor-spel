@@ -8,7 +8,7 @@ public class TurretEnemy : MonoBehaviour
     [SerializeField] float maxXposition;
     [SerializeField] float minXposition;
     Rigidbody2D rb;
-    [SerializeField] Transform player;
+    Transform player;
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
     [SerializeField] float timeBetweenShots;
@@ -21,6 +21,7 @@ public class TurretEnemy : MonoBehaviour
     public bool seePlayerWhenClose;
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
     }
     private void OnDrawGizmosSelected()

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class DimensionChanger : InteractableObject
 {
-    public static int dimension; // eftersom dimension är public static så kan man komma åt den var som hellst med DimiensionChanger.dimension
+    public static int dimension = 1; // eftersom dimension är public static så kan man komma åt den var som hellst med DimiensionChanger.dimension
     [SerializeField] List<GameObject> dimensions;
     public override void Interact()
     {

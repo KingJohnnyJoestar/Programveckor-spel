@@ -9,9 +9,9 @@ public class CameraCode : MonoBehaviour
     public float maxXDistance;
     public float maxYDistance;
     [SerializeField] List<Color32> dimensionColors = new List<Color32>();
-    void Start()
+    private void Awake()
     {
-        
+        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
 
     // Update is called once per frame

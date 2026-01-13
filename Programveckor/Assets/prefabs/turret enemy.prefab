@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4521047325884671011}
   - component: {fileID: 1477425316011889602}
   - component: {fileID: -5733476791945506419}
+  - component: {fileID: -7220309858349471752}
   m_Layer: 0
   m_Name: turret enemy
   m_TagString: Untagged
@@ -109,12 +110,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxXposition: 30
   minXposition: 16
-  player: {fileID: 0}
   speed: 12
   maxSpeed: 6
   timeBetweenShots: 2
   projectile: {fileID: 7122027051178548403, guid: fdc4eb7c92e0faf41a0cda916e93f129, type: 3}
-  projectileSpeed: 0
+  projectileSpeed: 3
   seePlayer: 0
   seePlayerAreaBottomLeft: {x: 16, y: 5}
   seePlayerAreaTopRight: {x: 30, y: 20}
@@ -219,3 +219,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   health: 1
+--- !u!114 &-7220309858349471752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764629137343234412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a9f782a1cc18d4f80aa2579e46c265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityChange
