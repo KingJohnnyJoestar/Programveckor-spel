@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9c4a4685f49b6334aba5e1413d2278ac
+guid: c9e9c0e368da94c4fb440e6fa58cffb9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1075993247170539406
-    second: cat_0
+      213: -7737380229929362425
+    second: Cowboy_Idle_0
+  - first:
+      213: -4642673305040787780
+    second: Cowboy_Idle_1
+  - first:
+      213: -9057336396286903527
+    second: Cowboy_Idle_2
+  - first:
+      213: -1204237820536545461
+    second: Cowboy_Idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_0
+      name: Cowboy_Idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 17
         y: 0
-        width: 31
-        height: 41
+        width: 28
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e8fa15e4822beee00800000000000000
-      internalID: 1075993247170539406
+      spriteID: 70c1eeedcad4f9490800000000000000
+      internalID: -7737380229929362425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6eadc1a39e19fb0800000000000000
+      internalID: -4642673305040787780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b3a101980ed4280800000000000000
+      internalID: -9057336396286903527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f14d12510b94fe0800000000000000
+      internalID: -1204237820536545461
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_0: 1075993247170539406
+      Cowboy_Idle_0: -7737380229929362425
+      Cowboy_Idle_1: -4642673305040787780
+      Cowboy_Idle_2: -9057336396286903527
+      Cowboy_Idle_3: -1204237820536545461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
