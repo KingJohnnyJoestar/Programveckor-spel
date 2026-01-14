@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 9c4a4685f49b6334aba5e1413d2278ac
+guid: e07489b9117c70d4f805d5aea2a75fbc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1075993247170539406
-    second: cat_0
+      213: 8306189609547676949
+    second: Banor_1_0
+  - first:
+      213: -102955834383550906
+    second: Banor_1_1
+  - first:
+      213: -691950651808569415
+    second: Banor_1_2
+  - first:
+      213: -3985273403086155316
+    second: Banor_1_3
+  - first:
+      213: 6509988064504942806
+    second: Banor_1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_0
+      name: Banor_1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 26
         y: 0
-        width: 31
-        height: 41
+        width: 135
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e8fa15e4822beee00800000000000000
-      internalID: 1075993247170539406
+      spriteID: 51d312a1173854370800000000000000
+      internalID: 8306189609547676949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banor_1_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 258
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 646b300d63a329ef0800000000000000
+      internalID: -102955834383550906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banor_1_2
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 0
+        width: 237
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7a9dc5c82b566f0800000000000000
+      internalID: -691950651808569415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banor_1_3
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 0
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc1dc3c64f671b8c0800000000000000
+      internalID: -3985273403086155316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banor_1_4
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 0
+        width: 191
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d099dc37af185a50800000000000000
+      internalID: 6509988064504942806
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_0: 1075993247170539406
+      Banor_1_0: 8306189609547676949
+      Banor_1_1: -102955834383550906
+      Banor_1_2: -691950651808569415
+      Banor_1_3: -3985273403086155316
+      Banor_1_4: 6509988064504942806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
