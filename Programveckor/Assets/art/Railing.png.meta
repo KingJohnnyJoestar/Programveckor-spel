@@ -134,16 +134,16 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 95
-        width: 97
-        height: 48
+        y: 142
+        width: 44
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 1b37f6bd62c133a30800000000000000
       internalID: 4193726631227913137
@@ -155,17 +155,17 @@ TextureImporter:
       name: Railing_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 143
-        width: 46
+        x: 154
+        y: 32
+        width: 16
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 3e5e1528e993cb1d0800000000000000
       internalID: -3333726271206988317
@@ -177,17 +177,17 @@ TextureImporter:
       name: Railing_2
       rect:
         serializedVersion: 2
-        x: 161
-        y: 111
-        width: 46
-        height: 46
+        x: 160
+        y: 112
+        width: 47
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: c4917d684a2a98eb0800000000000000
       internalID: -4717060307173303988
@@ -199,17 +199,17 @@ TextureImporter:
       name: Railing_3
       rect:
         serializedVersion: 2
-        x: 321
-        y: 127
-        width: 94
-        height: 32
+        x: 320
+        y: 122
+        width: 95
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 370bd7bf5d9f92640800000000000000
       internalID: 5055846754142761075
@@ -221,17 +221,17 @@ TextureImporter:
       name: Railing_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 47
+        x: 170
+        y: 33
         width: 65
-        height: 48
+        height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 7641d6009c6566770800000000000000
       internalID: 8603659559433475175
@@ -243,17 +243,17 @@ TextureImporter:
       name: Railing_5
       rect:
         serializedVersion: 2
-        x: 63
-        y: 72
-        width: 6
-        height: 9
+        x: 0
+        y: 45
+        width: 64
+        height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: d86d4d601199c8d90800000000000000
       internalID: -7094127014607268211
@@ -265,17 +265,17 @@ TextureImporter:
       name: Railing_6
       rect:
         serializedVersion: 2
-        x: 69
-        y: 63
-        width: 6
-        height: 18
+        x: 0
+        y: 96
+        width: 96
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: ad4bafed0572adf40800000000000000
       internalID: 5753954702211069146
@@ -287,17 +287,17 @@ TextureImporter:
       name: Railing_7
       rect:
         serializedVersion: 2
-        x: 85
-        y: 63
-        width: 6
-        height: 18
+        x: 131
+        y: 32
+        width: 22
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 161f03fdbc88327b0800000000000000
       internalID: -5250202331379601055
@@ -309,17 +309,17 @@ TextureImporter:
       name: Railing_8
       rect:
         serializedVersion: 2
-        x: 91
-        y: 72
-        width: 6
-        height: 9
+        x: 234
+        y: 33
+        width: 84
+        height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: ff9e25291a334adf0800000000000000
       internalID: -169954116895577601
@@ -331,42 +331,20 @@ TextureImporter:
       name: Railing_9
       rect:
         serializedVersion: 2
-        x: 129
-        y: 31
-        width: 192
-        height: 80
+        x: 400
+        y: 63
+        width: 80
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: def144861a172f950800000000000000
       internalID: 6481367751792533485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Railing_10
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 63
-        width: 78
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 944be5130ef634a70800000000000000
-      internalID: 8810008304758469705
       vertices: []
       indices: 
       edges: []
@@ -375,7 +353,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 057ccb4c44e597642abe96991069c1ec
     internalID: 0
     vertices: []
     indices: 
@@ -383,11 +361,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":80.0,"y":80.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Railing_0: 4193726631227913137
       Railing_1: -3333726271206988317
-      Railing_10: 8810008304758469705
       Railing_2: -4717060307173303988
       Railing_3: 5055846754142761075
       Railing_4: 8603659559433475175

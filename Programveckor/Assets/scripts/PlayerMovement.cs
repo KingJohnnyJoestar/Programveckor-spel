@@ -25,10 +25,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask ground;
     [SerializeField] int gameOverScene;
     public Vector2 respawnPos;
+    PlayerAnimation anim;
     void Start()
     {
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<PlayerAnimation>();
         respawnPos = transform.position;
     }
 
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
             //rb.linearVelocity = new Vector2(rb.linearVelocityX, 0);
             jumptimer = maxJumpFrames;
             Debug.Log("new jump");
+            anim.startJump();
         }
 
 
@@ -121,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             jumptimer--;
         }
     }
-    bool touchingGround()
+    public bool touchingGround()
     {
         //return true;
         Vector2 direction = Vector2.down;
