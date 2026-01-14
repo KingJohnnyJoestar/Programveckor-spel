@@ -30,11 +30,25 @@ public class PlayerAnimation : MonoBehaviour
         }
         if (lastDirection == -1)
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+            if (DimensionChanger.dimension == 2)
+            {
+                transform.rotation = new Quaternion(180, 0, 0, 0);
+            }
+            else
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
         }
         else
         {
-            transform.rotation = new Quaternion(0, 180, 0, 0);
+            if (DimensionChanger.dimension == 2)
+            {
+                transform.rotation = new Quaternion(0, 0, 180, 0);
+            }
+            else
+            {
+                transform.rotation = new Quaternion(0, 180, 0, 0);
+            }
         }
         if (movement.touchingGround() && jumpTimer > jumpAnimationTime)
         {
