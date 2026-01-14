@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1477425316011889602}
   - component: {fileID: -5733476791945506419}
   - component: {fileID: -7220309858349471752}
+  - component: {fileID: 1283759054697668167}
   m_Layer: 0
   m_Name: turret enemy
   m_TagString: Untagged
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.8867924, g: 0.2928087, b: 0.2928087, a: 1}
+  m_Sprite: {fileID: -6903796670087259372, guid: 5933d09c1a51ea84d9a84b8af33519e3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -110,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxXposition: 30
   minXposition: 16
-  speed: 12
-  maxSpeed: 6
+  speed: 0
+  maxSpeed: 0
   timeBetweenShots: 2
   projectile: {fileID: 7122027051178548403, guid: fdc4eb7c92e0faf41a0cda916e93f129, type: 3}
   projectileSpeed: 3
@@ -198,7 +199,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 0.68, y: 0.92}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -231,3 +232,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a9f782a1cc18d4f80aa2579e46c265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityChange
+--- !u!95 &1283759054697668167
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764629137343234412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41ad5025a24bf4c43a2e83ba10eb58bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

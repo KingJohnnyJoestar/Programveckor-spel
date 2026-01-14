@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: ad94fdef5ee93514bb5cbae91eec9c07
+guid: 5933d09c1a51ea84d9a84b8af33519e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8529925095596545616
-    second: Cowboy_jump_0
+      213: -6903796670087259372
+    second: cactus_fiende_idle_west_0
   - first:
-      213: -583354234558279361
-    second: Cowboy_jump_1
+      213: 5045750306999916480
+    second: cactus_fiende_idle_west_1
   - first:
-      213: 8197791416035861392
-    second: Cowboy_jump_2
+      213: -4720961185544658438
+    second: cactus_fiende_idle_west_2
   - first:
-      213: 468242129055553844
-    second: Cowboy_jump_3
-  - first:
-      213: 5660621934667659437
-    second: Cowboy_jump_4
-  - first:
-      213: 7995268622796189800
-    second: Cowboy_jump_5
-  - first:
-      213: -1346745008181176888
-    second: Cowboy_jump_6
-  - first:
-      213: 8185840021885164150
-    second: Cowboy_jump_7
+      213: 7495439458964469288
+    second: cactus_fiende_idle_west_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -121,166 +109,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cowboy_jump_0
+      name: cactus_fiende_idle_west_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 5
         y: 0
-        width: 28
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b9274ca15e9f9980800000000000000
-      internalID: -8529925095596545616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_1
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 0
-        width: 31
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f311fe61a6287e7f0800000000000000
-      internalID: -583354234558279361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_2
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 0
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 093609febd764c170800000000000000
-      internalID: 8197791416035861392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_3
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 5
-        width: 33
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4399a3b4cb78f7600800000000000000
-      internalID: 468242129055553844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_4
-      rect:
-        serializedVersion: 2
-        x: 268
-        y: 6
         width: 34
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da876a788a19e8e40800000000000000
-      internalID: 5660621934667659437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_5
-      rect:
-        serializedVersion: 2
-        x: 334
-        y: 0
-        width: 33
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 860f791a376e4fe60800000000000000
-      internalID: 7995268622796189800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_6
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 0
-        width: 31
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c59458ec866f4de0800000000000000
-      internalID: -1346745008181176888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cowboy_jump_7
-      rect:
-        serializedVersion: 2
-        x: 464
-        y: 0
-        width: 28
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67a14a42122f99170800000000000000
-      internalID: 8185840021885164150
+      spriteID: 41b9ce5a189c030a0800000000000000
+      internalID: -6903796670087259372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cactus_fiende_idle_west_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c75c02bb2b160640800000000000000
+      internalID: 5045750306999916480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cactus_fiende_idle_west_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1243180d6cb7eb0800000000000000
+      internalID: -4720961185544658438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cactus_fiende_idle_west_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826f503b976250860800000000000000
+      internalID: 7495439458964469288
       vertices: []
       indices: 
       edges: []
@@ -310,14 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cowboy_jump_0: -8529925095596545616
-      Cowboy_jump_1: -583354234558279361
-      Cowboy_jump_2: 8197791416035861392
-      Cowboy_jump_3: 468242129055553844
-      Cowboy_jump_4: 5660621934667659437
-      Cowboy_jump_5: 7995268622796189800
-      Cowboy_jump_6: -1346745008181176888
-      Cowboy_jump_7: 8185840021885164150
+      cactus_fiende_idle_west_0: -6903796670087259372
+      cactus_fiende_idle_west_1: 5045750306999916480
+      cactus_fiende_idle_west_2: -4720961185544658438
+      cactus_fiende_idle_west_3: 7495439458964469288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
