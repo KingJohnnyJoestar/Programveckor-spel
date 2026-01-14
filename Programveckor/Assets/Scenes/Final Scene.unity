@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 359081424}
   - component: {fileID: 359081423}
   - component: {fileID: 359081426}
+  - component: {fileID: 359081427}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1193,6 +1194,103 @@ MonoBehaviour:
     rgba: 4294911232
   - serializedVersion: 2
     rgba: 4278255392
+--- !u!82 &359081427
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359081422}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: acd358457d1ad8b43906b9ba8ffa9f13, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &368516882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1831771576254650326, guid: 99e21926c42d7594886fb2fd120cfab1, type: 3}
@@ -1431,6 +1529,8 @@ MonoBehaviour:
   - {fileID: 1339940191}
   - {fileID: 724652965}
   - {fileID: 55320926}
+  teleportPosition: {x: 0, y: 0}
+  becomeSpecifikDimension: 0
 --- !u!61 &431323204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1651,7 +1751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991987299906105611, guid: bb088d3d198486d47a659055365b4a1b, type: 3}
       propertyPath: seePlayerAreaBottomLeft.y
-      value: 4.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7655855458202628403, guid: bb088d3d198486d47a659055365b4a1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1834,6 +1934,8 @@ MonoBehaviour:
   - {fileID: 1339940191}
   - {fileID: 724652965}
   - {fileID: 55320926}
+  teleportPosition: {x: 0, y: 0}
+  becomeSpecifikDimension: 0
 --- !u!61 &575055618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3105,6 +3207,8 @@ MonoBehaviour:
   - {fileID: 1339940191}
   - {fileID: 724652965}
   - {fileID: 55320926}
+  teleportPosition: {x: 0, y: 0}
+  becomeSpecifikDimension: 0
 --- !u!61 &950470561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3316,6 +3420,8 @@ MonoBehaviour:
   - {fileID: 1339940191}
   - {fileID: 724652965}
   - {fileID: 55320926}
+  teleportPosition: {x: 0, y: 0}
+  becomeSpecifikDimension: 0
 --- !u!61 &980113121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4958,6 +5064,8 @@ MonoBehaviour:
   - {fileID: 1339940191}
   - {fileID: 724652965}
   - {fileID: 55320926}
+  teleportPosition: {x: 0, y: 0}
+  becomeSpecifikDimension: 0
 --- !u!61 &1456756138
 BoxCollider2D:
   m_ObjectHideFlags: 0
