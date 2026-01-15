@@ -16,11 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public float waterMaxSpeed;
     public float jumpSpeed = 40;
     int jumptimer = 0;
+    public int minJumpFrames;
     public int maxJumpFrames = 15;
 
     public float stopSpeed = 0.4f;
     int moveX = 0;
-    public float raycastDistance;
     BoxCollider2D boxColl;
     [SerializeField] LayerMask ground;
     [SerializeField] int gameOverScene;
@@ -78,13 +78,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            bool dontMove = false;
             if (lastDirection == -1)
             {
                 if (rb.linearVelocityX >= 0)
                 {
                     rb.linearVelocityX = 0;
-                    dontMove = true;
+                    lastDirection = 0;
                 }
             }
             else
@@ -92,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
                 if (rb.linearVelocityX <= 0)
                 {
                     rb.linearVelocityX = 0;
-                    dontMove = true;
+                    lastDirection = 0;
                 }
             }
-            if (!dontMove)
+            if (lastDirection != 0)
             {
                 if (DimensionChanger.dimension == 3)
                 {
@@ -135,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        if ((Keyboard.current.zKey.isPressed || Keyboard.current.spaceKey.isPressed) && jumptimer > 0)
+        if (((Keyboard.current.zKey.isPressed || Keyboard.current.spaceKey.isPressed) && jumptimer > 0) || jumptimer > maxJumpFrames - minJumpFrames)
         {
             if (rb.gravityScale > 0)
             {

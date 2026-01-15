@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (interactUI.activeSelf)
         {
-            Debug.Log("can interact");
+            //Debug.Log("can interact");
             if(Keyboard.current.eKey.wasPressedThisFrame || Keyboard.current.xKey.wasPressedThisFrame)
             {
                 Debug.Log("interact");

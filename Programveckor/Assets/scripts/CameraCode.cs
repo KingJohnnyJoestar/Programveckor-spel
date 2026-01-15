@@ -9,7 +9,8 @@ public class CameraCode : MonoBehaviour
     public float maxXDistance;
     public float maxYDistance;
     [SerializeField] List<Color32> dimensionColors = new List<Color32>();
-    public float minHeight;
+    //public float minHeight;
+    public List<Vector4> heightLimits; // z ska vara mindre än w     x bestämmer den minsta höjden     y bestämmer den högsta höjden   området mellan z och w är där dom begränsningarna gäller
     private void Awake()
     {
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
@@ -17,7 +18,15 @@ public class CameraCode : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color32(70, 255, 70, 255);
-        Gizmos.DrawLine(new Vector2(-1000, minHeight), new Vector2(1000, minHeight));
+        //Gizmos.DrawLine(new Vector2(-1000, minHeight), new Vector2(1000, minHeight));
+        for (int i = 0; i < heightLimits.Count; i++)
+        {
+            Vector4 currentLimits = heightLimits[i];
+            float minHeight = currentLimits.x;
+            float maxHeight = currentLimits.y;
+            Gizmos.DrawLine(new Vector2(currentLimits.z, minHeight), new Vector2(currentLimits.w, minHeight));
+            Gizmos.DrawLine(new Vector2(currentLimits.z, maxHeight), new Vector2(currentLimits.w, maxHeight));
+        }
     }
     // Update is called once per frame
     void Update()
@@ -40,9 +49,23 @@ public class CameraCode : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, player.position.y + maxYDistance, transform.position.z);
         }
-        if (transform.position.y < minHeight && minHeight != 0)
+        for (int i = 0; i < heightLimits.Count; i++)
         {
-            transform.position = new Vector3(transform.position.x, minHeight, transform.position.z);
+            Vector4 currentLimits = heightLimits[i];
+            if (transform.position.x > currentLimits.z && transform.position.x < currentLimits.w)
+            {
+                float minHeight = currentLimits.x;
+                float maxHeight = currentLimits.y;
+                //Debug.Log(transform.position.y + "   " + minHeight + "  " + maxHeight);
+                if (transform.position.y < minHeight)
+                {
+                    transform.position = new Vector3(transform.position.x, minHeight, transform.position.z);
+                }
+                else if (transform.position.y > maxHeight)
+                {
+                    transform.position = new Vector3(transform.position.x, maxHeight, transform.position.z);
+                }
+            }
         }
     }
     public void SwitchDimension(int newDimension)

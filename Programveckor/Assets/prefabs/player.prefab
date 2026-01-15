@@ -142,6 +142,7 @@ MonoBehaviour:
   maxSpeed: 8
   waterMaxSpeed: 6
   jumpSpeed: 40
+  minJumpFrames: 6
   maxJumpFrames: 15
   stopSpeed: 0.4
   raycastDistance: 0
@@ -241,7 +242,7 @@ MonoBehaviour:
   runLeft: Run
   idleLeft: Idle
   jumpLeft: JumpStart
-  fallLeft: JumpFall
+  fall: {fileID: 0}
   jumpAnimationTime: 0
 --- !u!95 &2492934262825325411
 Animator:

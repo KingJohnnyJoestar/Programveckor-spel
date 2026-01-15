@@ -7,11 +7,13 @@ public class DimensionChanger : InteractableObject
 {
     public static int dimension = 1; // eftersom dimension är public static så kan man komma åt den var som hellst med DimiensionChanger.dimension
     [SerializeField] List<GameObject> dimensions;
-    public Vector2 teleportPosition;
+    public Vector2 teleportOffset;
+    public GameObject teleportObject;
     public int becomeSpecifikDimension;
     GameObject player;
     GameObject camera;
     [SerializeField] int startDimension;
+
 
     private void Start()
     {
@@ -37,8 +39,9 @@ public class DimensionChanger : InteractableObject
                 dimension = 1;
             }
         }
-        if (teleportPosition != new Vector2(0, 0))
+        if (teleportObject != null)
         {
+            Vector2 teleportPosition = teleportObject.transform.position + new Vector3(teleportOffset.x, teleportOffset.y);
             player.transform.position = teleportPosition;
             player.GetComponent<PlayerMovement>().respawnPos = teleportPosition;
         }

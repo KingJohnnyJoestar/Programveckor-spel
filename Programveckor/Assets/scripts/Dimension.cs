@@ -5,6 +5,7 @@ public class Dimension : MonoBehaviour
     [SerializeField] GameObject disableObject;
     public void ChangeDimension(bool active)
     {
+        Debug.Log("dimensionchange " + active + "  " + DimensionChanger.dimension + "DimensionChanger.dimension");
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject currentChild = transform.GetChild(i).gameObject;
