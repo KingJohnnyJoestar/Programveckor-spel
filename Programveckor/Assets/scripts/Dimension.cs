@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Dimension : MonoBehaviour
 {
-    [SerializeField] GameObject background;
+    [SerializeField] GameObject disableObject;
     public void ChangeDimension(bool active)
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -22,9 +22,9 @@ public class Dimension : MonoBehaviour
                 }
             }
         }
-        if (background != null)
+        if (disableObject != null)
         {
-            background.SetActive(active);
+            disableObject.SetActive(active);
         }
     }
 }

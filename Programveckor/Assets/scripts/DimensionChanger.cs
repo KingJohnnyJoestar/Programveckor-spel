@@ -11,11 +11,17 @@ public class DimensionChanger : InteractableObject
     public int becomeSpecifikDimension;
     GameObject player;
     GameObject camera;
+    [SerializeField] int startDimension;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         camera = GameObject.FindWithTag("MainCamera");
+        if (startDimension != 0)
+        {
+            dimension = startDimension - 1;
+            Interact();
+        }
     }
     public override void Interact()
     {
