@@ -40,7 +40,7 @@ public class CameraCode : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, player.position.y + maxYDistance, transform.position.z);
         }
-        if (transform.position.y < minHeight)
+        if (transform.position.y < minHeight && minHeight != 0)
         {
             transform.position = new Vector3(transform.position.x, minHeight, transform.position.z);
         }
