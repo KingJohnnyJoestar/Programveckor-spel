@@ -55,7 +55,7 @@ public class TurretEnemy : MonoBehaviour
         {
             seePlayer = player.transform.position.x > seePlayerAreaBottomLeft.x && player.transform.position.y > seePlayerAreaBottomLeft.y && player.transform.position.x < seePlayerAreaTopRight.x && player.transform.position.y < seePlayerAreaTopRight.y;
         }
-        if (seePlayer)
+        if (seePlayer && gameObject.layer != 6)
         {
             if (DimensionChanger.dimension == 3)
             {
@@ -75,7 +75,7 @@ public class TurretEnemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (seePlayer && DimensionChanger.dimension != 3)
+        if (seePlayer && DimensionChanger.dimension != 3 && speed != 0)
         {
             if (player.position.x > transform.position.x && transform.position.x < maxXposition)
             {

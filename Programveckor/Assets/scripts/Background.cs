@@ -12,6 +12,7 @@ public class Background : MonoBehaviour
     [SerializeField] List<float> prefabYposition;
     [SerializeField] float backgroundObjectSpeed;
     [SerializeField] float distance;
+    [SerializeField] int dimension;
     private void Start()
     {
         for(int i = 0; i < backgroundObjects.Count; i++)
@@ -40,10 +41,10 @@ public class Background : MonoBehaviour
         //moveMaxXPos = cameraObject.GetComponent<Camera>().orthographicSize * 2;
         //moveMinXPos = -cameraObject.GetComponent<Camera>().orthographicSize * 2;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         float xMovement = (transform.position.x - cameraObject.position.x) * backgroundObjectSpeed;
-        transform.position = new Vector3(cameraObject.position.x, cameraObject.position.y, 0.1f);
+        transform.position = new Vector3(cameraObject.position.x, cameraObject.position.y, transform.position.z);
 
         foreach (List<GameObject> backgroundList in backgroundObjects)
         {

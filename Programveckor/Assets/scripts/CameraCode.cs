@@ -9,11 +9,16 @@ public class CameraCode : MonoBehaviour
     public float maxXDistance;
     public float maxYDistance;
     [SerializeField] List<Color32> dimensionColors = new List<Color32>();
+    public float minHeight;
     private void Awake()
     {
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color32(70, 255, 70, 255);
+        Gizmos.DrawLine(new Vector2(-1000, minHeight), new Vector2(1000, minHeight));
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +39,10 @@ public class CameraCode : MonoBehaviour
         else if (transform.position.y - maxYDistance > player.position.y)
         {
             transform.position = new Vector3(transform.position.x, player.position.y + maxYDistance, transform.position.z);
+        }
+        if (transform.position.y < minHeight)
+        {
+            transform.position = new Vector3(transform.position.x, minHeight, transform.position.z);
         }
     }
     public void SwitchDimension(int newDimension)
