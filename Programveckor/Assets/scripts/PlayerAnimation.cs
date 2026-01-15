@@ -50,7 +50,7 @@ public class PlayerAnimation : MonoBehaviour
                 transform.rotation = new Quaternion(0, 180, 0, 0);
             }
         }
-        if (movement.touchingGround() && jumpTimer > jumpAnimationTime)
+        if (movement.touchingGround())
         {
             if (currentDirection == 0)
             {
@@ -63,14 +63,10 @@ public class PlayerAnimation : MonoBehaviour
         }
         else
         {
-            if (jumpTimer < jumpAnimationTime)
-            {
-                
-            }
-            else
-            {
-                anim.Play(fallLeft);
-            }
+            //if (jumpTimer > jumpAnimationTime)
+            //{
+            //    anim.Play(fallLeft);
+            //}
         }
     }
     public void startJump()
