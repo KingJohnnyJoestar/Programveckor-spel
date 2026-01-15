@@ -9,9 +9,11 @@ public class PickUpObject : MonoBehaviour
     bool cantDrop;
     public Vector2 throwVelocity;
     public float throwUpVelocity;
+    BoxCollider2D coll;
+    public float boxCollXSize;
     void Start()
     {
-        
+        coll = transform.GetChild(0).GetComponent<BoxCollider2D>();   
     }
 
     // Update is called once per frame
@@ -34,15 +36,15 @@ public class PickUpObject : MonoBehaviour
         }
         if (carryItem != null)
         {
-            if ((DimensionChanger.dimension == 2) == (GetComponent<BoxCollider2D>().offset == new Vector2(0, 0.5f)))
+            if ((DimensionChanger.dimension == 2) == (coll.offset == new Vector2(0, 0.5f)))
             {
                 if (DimensionChanger.dimension == 2)
                 {
-                    GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.5f);
+                    coll.offset = new Vector2(0, -0.5f);
                 }
                 else
                 {
-                    GetComponent<BoxCollider2D>().offset = new Vector2(0, 0.5f);
+                    coll.offset = new Vector2(0, 0.5f);
                 }
             }
             Vector2 itemPosition = transform.position;
@@ -62,21 +64,21 @@ public class PickUpObject : MonoBehaviour
     {
         carryItem = item;
         cantDrop = true;
-        GetComponent<BoxCollider2D>().size = new Vector2(1,2);
+        coll.size = new Vector2(boxCollXSize,2);
         if (DimensionChanger.dimension == 2)
         {
-            GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.5f);
+            coll.offset = new Vector2(0, -0.5f);
         }
         else
         {
-            GetComponent<BoxCollider2D>().offset = new Vector2(0, 0.5f);
+            coll.offset = new Vector2(0, 0.5f);
         }
     }
     public void drop()
     {
         carryItem = null;
-        GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
-        GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+        coll.size = new Vector2(boxCollXSize, 1);
+        coll.offset = new Vector2(0, 0);
     }
     public void Reset()
     {

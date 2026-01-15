@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8039853733771095962}
   - component: {fileID: 1876603550012665149}
   - component: {fileID: 1997809333928571667}
+  - component: {fileID: 3964468329002776369}
   m_Layer: 2
   m_Name: dimension changer (1)
   m_TagString: Untagged
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  m_Sprite: {fileID: -4157515734326675310, guid: 481ef34c71c356f47a5037926ad06736, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8828125, y: 1}
+    oldSize: {x: 0.48, y: 0.44}
     newSize: {x: 0.8828125, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,6 +160,23 @@ MonoBehaviour:
   - {fileID: 0}
   teleportPosition: {x: 0, y: 0}
   becomeSpecifikDimension: 0
+--- !u!114 &3964468329002776369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550739263970411412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ad1d6b3fbec0f4fbd4c2916adf46a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeSprite
+  dimensionSprites:
+  - {fileID: -4157515734326675310, guid: 481ef34c71c356f47a5037926ad06736, type: 3}
+  - {fileID: -4157515734326675310, guid: 481ef34c71c356f47a5037926ad06736, type: 3}
+  - {fileID: 6989442683148653180, guid: 12faa3c17d4d8f945949363f6aa81b42, type: 3}
+  - {fileID: -2855393574034052442, guid: 29c04eec3bfffb948a0bbb9640fe28e2, type: 3}
 --- !u!1 &6902633668181675646
 GameObject:
   m_ObjectHideFlags: 0

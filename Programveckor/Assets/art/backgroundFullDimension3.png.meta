@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 12faa3c17d4d8f945949363f6aa81b42
+guid: 2fc876bf962d01c40a64a8db12eb4232
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6989442683148653180
-    second: cristal_2_0
+      213: 5852975825377744471
+    second: backgroundFullDimension3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cristal_2_0
+      name: backgroundFullDimension3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 48
-        height: 44
+        y: 0
+        width: 715
+        height: 387
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c725703b61d7ff060800000000000000
-      internalID: 6989442683148653180
+      spriteID: 756d696b082f93150800000000000000
+      internalID: 5852975825377744471
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cristal_2_0: 6989442683148653180
+      backgroundFullDimension3_0: 5852975825377744471
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
