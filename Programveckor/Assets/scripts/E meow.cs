@@ -7,10 +7,6 @@ public class Emeow : InteractableObject
     public AudioSource source;
 
     public List<AudioClip> sounds;
-    //public AudioClip sound1;  
-    //public AudioClip sound2;
-    //public AudioClip sound3;
-    //public AudioClip sound4;
 
     //private float random;
     private bool IsMeowing = false;
@@ -40,23 +36,6 @@ public class Emeow : InteractableObject
     {
         source.PlayOneShot(sounds[random]);
         timmer = sounds[random].length;
-        //if (random == 1)
-        //{
-        //    source.PlayOneShot(sound1);
-        //}
-        //if (random == 2)
-        //{
-
-        //    source.PlayOneShot(sound2);
-        //}
-        //if (random == 3)
-        //{
-        //    source.PlayOneShot(sound3);
-        //}
-        //if (random == 4)
-        //{
-        //    source.PlayOneShot(sound4);
-        //}
     }
 }
 
