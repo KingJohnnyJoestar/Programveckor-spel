@@ -23,6 +23,7 @@ public class DimensionChanger : InteractableObject
         {
             player.transform.position = teleportPosition;
             dimension = becomeSpecifikDimension;
+            player.GetComponent<PlayerMovement>().respawnPos = teleportPosition;
         }
         else
         {
@@ -31,17 +32,22 @@ public class DimensionChanger : InteractableObject
             {
                 dimension = 1;
             }
+            player.GetComponent<PlayerMovement>().respawnPos = transform.position;
         }
         GravityChange[] gravityObjects = FindObjectsOfType<GravityChange>();
         foreach (GravityChange g in gravityObjects)
         {
             g.ChangeDimension(dimension);
         }
+        ChangeSprite[] spriteObjects = FindObjectsOfType<ChangeSprite>();
+        foreach (ChangeSprite s in spriteObjects)
+        {
+            s.changeSprite();
+        }
         camera.GetComponent<CameraCode>().SwitchDimension(dimension);
-        player.GetComponent<PlayerMovement>().respawnPos = transform.position;
         for (int i = 1; i < dimensions.Count; i++)
         {
-            dimensions[i].SetActive(i == dimension);
+            dimensions[i].GetComponent<Dimension>().ChangeDimension(i == dimension);
         }
     }
 }
