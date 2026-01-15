@@ -78,29 +78,34 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (DimensionChanger.dimension == 3)
-            {
-                rb.AddForce(new Vector2(waterSpeed * -lastDirection, 0));
-            }
-            else
-            {
-                rb.AddForce(new Vector2(movementSpeed * -lastDirection, 0));
-            }
+            bool dontMove = false;
             if (lastDirection == -1)
             {
-                if (rb.linearVelocityX > 0)
+                if (rb.linearVelocityX >= 0)
                 {
                     rb.linearVelocityX = 0;
+                    dontMove = true;
                 }
             }
             else
             {
-                if (rb.linearVelocityX < 0)
+                if (rb.linearVelocityX <= 0)
                 {
                     rb.linearVelocityX = 0;
+                    dontMove = true;
                 }
             }
-
+            if (!dontMove)
+            {
+                if (DimensionChanger.dimension == 3)
+                {
+                    rb.AddForce(new Vector2(waterSpeed * -lastDirection, 0));
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(movementSpeed * -lastDirection, 0));
+                }
+            }
             ////rb.linearVelocityX = rb.linearVelocityX / 2;
             //if (rb.linearVelocityX > stopSpeed)
             //{
