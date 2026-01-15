@@ -25,11 +25,9 @@ public class DimensionChanger : InteractableObject
     }
     public override void Interact()
     {
-        if (teleportPosition != new Vector2(0, 0))
+        if (becomeSpecifikDimension != 0)
         {
-            player.transform.position = teleportPosition;
             dimension = becomeSpecifikDimension;
-            player.GetComponent<PlayerMovement>().respawnPos = teleportPosition;
         }
         else
         {
@@ -38,6 +36,14 @@ public class DimensionChanger : InteractableObject
             {
                 dimension = 1;
             }
+        }
+        if (teleportPosition != new Vector2(0, 0))
+        {
+            player.transform.position = teleportPosition;
+            player.GetComponent<PlayerMovement>().respawnPos = teleportPosition;
+        }
+        else
+        {
             player.GetComponent<PlayerMovement>().respawnPos = transform.position;
         }
         GravityChange[] gravityObjects = FindObjectsOfType<GravityChange>();
