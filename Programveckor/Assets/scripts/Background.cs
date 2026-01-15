@@ -36,7 +36,7 @@ public class Background : MonoBehaviour
             }
             a++;
         }
-        transform.position = new Vector3(cameraObject.position.x, cameraObject.position.y, 0.1f);
+        transform.position = new Vector3(cameraObject.position.x, cameraObject.position.y, transform.position.z);
         Debug.Log(transform.position);
         //moveMaxXPos = cameraObject.GetComponent<Camera>().orthographicSize * 2;
         //moveMinXPos = -cameraObject.GetComponent<Camera>().orthographicSize * 2;
