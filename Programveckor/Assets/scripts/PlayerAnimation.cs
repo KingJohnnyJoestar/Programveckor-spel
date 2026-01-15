@@ -10,7 +10,7 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] string runLeft;
     [SerializeField] string idleLeft;
     [SerializeField] string jumpLeft;
-    [SerializeField] string fallLeft;
+    [SerializeField] Sprite fall;
     float jumpTimer;
     [SerializeField] float jumpAnimationTime;
     void Start()
@@ -52,6 +52,7 @@ public class PlayerAnimation : MonoBehaviour
         }
         if (movement.touchingGround() && jumpTimer > jumpAnimationTime)
         {
+            anim.enabled = true;
             if (currentDirection == 0)
             {
                 anim.Play(idleLeft);
@@ -63,10 +64,11 @@ public class PlayerAnimation : MonoBehaviour
         }
         else
         {
-            //if (jumpTimer > jumpAnimationTime)
-            //{
-            //    anim.Play(fallLeft);
-            //}
+            if (jumpTimer > jumpAnimationTime)
+            {
+                GetComponent<SpriteRenderer>().sprite = fall;
+                anim.enabled = false; // fall är bara en frame så jag gjorde så den spelar inte en animation när karaktären faller
+            }
         }
     }
     public void startJump()

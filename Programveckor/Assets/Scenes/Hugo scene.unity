@@ -1534,7 +1534,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7737380229929362425, guid: c9e9c0e368da94c4fb440e6fa58cffb9, type: 3}
+  m_Sprite: {fileID: 5660621934667659437, guid: ad94fdef5ee93514bb5cbae91eec9c07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1599,7 +1599,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 1.2}
+    oldSize: {x: 0.85, y: 1.175}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   runLeft: Run
   idleLeft: Idle
   jumpLeft: JumpStart
-  fallLeft: JumpFall
+  fall: {fileID: 5660621934667659437, guid: ad94fdef5ee93514bb5cbae91eec9c07, type: 3}
   jumpAnimationTime: 0
 --- !u!1 &292207602
 GameObject:
