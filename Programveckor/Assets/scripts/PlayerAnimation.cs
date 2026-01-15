@@ -50,7 +50,7 @@ public class PlayerAnimation : MonoBehaviour
                 transform.rotation = new Quaternion(0, 180, 0, 0);
             }
         }
-        if (movement.touchingGround())
+        if (movement.touchingGround() && jumpTimer > jumpAnimationTime)
         {
             if (currentDirection == 0)
             {
