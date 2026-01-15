@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int gameOverScene;
     public Vector2 respawnPos;
     PlayerAnimation anim;
+    int lastDirection;
     void Start()
     {
         boxColl = GetComponent<BoxCollider2D>();
@@ -63,30 +64,56 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
-        if (DimensionChanger.dimension == 3)
+        if (moveX != 0)
         {
-            rb.AddForce(new Vector2(waterSpeed * moveX, 0));
-        }
-        else
-        {
-            rb.AddForce(new Vector2(movementSpeed * moveX, 0));
-        }
-        if (moveX == 0)
-        {
-            //rb.linearVelocityX = rb.linearVelocityX / 2;
-            if (rb.linearVelocityX > stopSpeed)
+            lastDirection = moveX;
+            if (DimensionChanger.dimension == 3)
             {
-                rb.linearVelocityX -= stopSpeed;
-            }
-            else if (rb.linearVelocityX < -stopSpeed)
-            {
-                rb.linearVelocityX += stopSpeed;
+                rb.AddForce(new Vector2(waterSpeed * moveX, 0));
             }
             else
             {
-                rb.linearVelocityX = 0;
+                rb.AddForce(new Vector2(movementSpeed * moveX, 0));
             }
+        }
+        else
+        {
+            if (DimensionChanger.dimension == 3)
+            {
+                rb.AddForce(new Vector2(waterSpeed * -lastDirection, 0));
+            }
+            else
+            {
+                rb.AddForce(new Vector2(movementSpeed * -lastDirection, 0));
+            }
+            if (lastDirection == -1)
+            {
+                if (rb.linearVelocityX > 0)
+                {
+                    rb.linearVelocityX = 0;
+                }
+            }
+            else
+            {
+                if (rb.linearVelocityX < 0)
+                {
+                    rb.linearVelocityX = 0;
+                }
+            }
+
+            ////rb.linearVelocityX = rb.linearVelocityX / 2;
+            //if (rb.linearVelocityX > stopSpeed)
+            //{
+            //    rb.linearVelocityX -= stopSpeed;
+            //}
+            //else if (rb.linearVelocityX < -stopSpeed)
+            //{
+            //    rb.linearVelocityX += stopSpeed;
+            //}
+            //else
+            //{
+            //    rb.linearVelocityX = 0;
+            //}
         }
         float currentMaxSpeed = maxSpeed;
         if (DimensionChanger.dimension == 3)
