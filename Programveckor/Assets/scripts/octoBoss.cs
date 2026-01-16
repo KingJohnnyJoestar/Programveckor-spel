@@ -44,8 +44,11 @@ public class octoBoss : ResetPosition
                 nextAttack = 1;
                 rb.linearVelocity = new Vector2(0, 0);
                 resetAttack();
+                //tentacleTimer = 3;
+                goToXPos = 0;
+                tentacleTimer = 2;
             }
-            if (goToXPos == 0)
+            else if (goToXPos == 0)
             {
                 goToXPos = player.transform.position.x;
                 if (goToXPos > transform.position.x)
@@ -56,7 +59,7 @@ public class octoBoss : ResetPosition
                 {
                     rb.linearVelocityX = -preFallSpeed;
                 }
-            }else if(goToXPos > transform.position.x == rb.linearVelocityX < preFallSpeed)
+            }else if(goToXPos > transform.position.x == rb.linearVelocityX < 0)
             {
                 rb.linearVelocity = new Vector2(0, -fallSpeed);
             }
@@ -65,12 +68,19 @@ public class octoBoss : ResetPosition
             tentacleTimer += Time.deltaTime;
             if (tentacleTimer > timeBetweenTentacles)
             {
-                Instantiate(tentacle, new Vector2(tentacleSpawnPosition.x * leftOrRight, tentacleSpawnPosition.y), Quaternion.identity).GetComponent<Rigidbody2D>().linearVelocityY = tentacleSpeed;
+                GameObject t = Instantiate(tentacle, new Vector2(tentacleSpawnPosition.x * leftOrRight, tentacleSpawnPosition.y), Quaternion.identity);
+                t.GetComponent<Rigidbody2D>().linearVelocityY = tentacleSpeed;
+                if (leftOrRight != 1)
+                {
+                    t.transform.rotation = Quaternion.Euler(0,180,0);
+                }
                 leftOrRight = -leftOrRight;
                 tentacleTimer = 0;
+                tentaclesSpawned++;
             }
             if (tentaclesSpawned > tentacles)
             {
+                tentaclesSpawned = 0;
                 nextAttack = 0;
                 resetAttack();
             }
@@ -88,5 +98,6 @@ public class octoBoss : ResetPosition
         timer = 0;
         damageSpawnTimer++;
         transform.position = spawnPos;
+        rb.linearVelocity = new Vector2(0, 0);
     }
 }

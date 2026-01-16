@@ -8,7 +8,6 @@ public class Item : MonoBehaviour
     public GameObject interactUI;
     PickUpObject player;
     bool caried;
-    public BoxCollider2D collider;
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PickUpObject>();
@@ -17,7 +16,7 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (caried && collider != null)
+        if (caried && GetComponent<Collider>() != null)
         {
             ////interactUI.SetActive(false);
             //BoxCollider2D[] coliders = GetComponents<BoxCollider2D>();

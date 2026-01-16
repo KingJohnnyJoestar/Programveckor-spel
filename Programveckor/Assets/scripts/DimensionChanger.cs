@@ -24,6 +24,7 @@ public class DimensionChanger : InteractableObject
             dimension = startDimension - 1;
             Interact();
         }
+        player.GetComponent<PlayerMovement>().respawnPos = player.transform.position;
     }
     public override void Interact()
     {

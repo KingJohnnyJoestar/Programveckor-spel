@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     int lastDirection;
     void Start()
     {
+        Debug.Log(transform.position);
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimation>();
