@@ -21,11 +21,15 @@ public class enemy_move : MonoBehaviour
     {
         EnemySpawnPosition = Enemy.transform.position;
     }
-
+    
+    
     // Update is called once per frame
     void Update()
     
     {
+        
+        
+        
         // Data to make atack calulation
         Distance = GetDistance(); 
         ActiveAtack = GetAtackValidationCalculation();
