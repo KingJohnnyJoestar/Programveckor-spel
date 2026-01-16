@@ -59,7 +59,7 @@ public class TurretEnemy : MonoBehaviour
         {
             if (DimensionChanger.dimension == 3)
             {
-                timer += Time.deltaTime * 3;
+                timer += Time.deltaTime;
             }
             timer += Time.deltaTime;
             if (timer > timeBetweenShots)
