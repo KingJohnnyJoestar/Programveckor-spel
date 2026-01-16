@@ -6,7 +6,7 @@ public class ResetPosition : MonoBehaviour
     Vector3 startRotation;
     //public bool willReset = true;
     public bool deleteOnReset;
-    private void Start()
+    private void Awake()
     {
         startPosition = transform.position;
         startRotation = new Vector3(Quaternion.identity.x, Quaternion.identity.z, Quaternion.identity.z); ;

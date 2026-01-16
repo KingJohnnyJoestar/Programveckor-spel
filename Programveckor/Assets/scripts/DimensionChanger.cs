@@ -64,10 +64,13 @@ public class DimensionChanger : InteractableObject
         //{
         //    s.changeSprite();
         //}
-        camera.GetComponent<CameraCode>().SwitchDimension(dimension);
-        for (int i = 1; i < dimensions.Count; i++)
+        if (dimensions.Count > 0)
         {
-            dimensions[i].GetComponent<Dimension>().ChangeDimension(i == dimension);
+            for (int i = 1; i < dimensions.Count; i++)
+            {
+                dimensions[i].GetComponent<Dimension>().ChangeDimension(i == dimension);
+            }
+            camera.GetComponent<CameraCode>().SwitchDimension(dimension);
         }
     }
 }
