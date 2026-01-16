@@ -11,14 +11,15 @@ public class Dimension : MonoBehaviour
             GameObject currentChild = transform.GetChild(i).gameObject;
             if (currentChild.GetComponent<SpriteRenderer>())
             {
+                Color32 currentColor = currentChild.GetComponent<SpriteRenderer>().color;
                 if (active)
                 {
-                    currentChild.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+                    currentChild.GetComponent<SpriteRenderer>().color = new Color32(currentColor.r, currentColor.g, currentColor.b, 255);
                     currentChild.layer = 0;
                 }
                 else
                 {
-                    currentChild.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 100);
+                    currentChild.GetComponent<SpriteRenderer>().color = new Color32(currentColor.r, currentColor.g, currentColor.b, 100);
                     currentChild.layer = 6;
                 }
             }

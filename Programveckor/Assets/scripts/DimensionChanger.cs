@@ -11,7 +11,7 @@ public class DimensionChanger : InteractableObject
     public GameObject teleportObject;
     public int becomeSpecifikDimension;
     GameObject player;
-    GameObject camera;
+    protected GameObject camera;
     [SerializeField] int startDimension;
 
 
@@ -49,16 +49,21 @@ public class DimensionChanger : InteractableObject
         {
             player.GetComponent<PlayerMovement>().respawnPos = transform.position;
         }
-        GravityChange[] gravityObjects = FindObjectsOfType<GravityChange>();
-        foreach (GravityChange g in gravityObjects)
+        DimensionChange[] dimensionObjects = FindObjectsOfType<DimensionChange>();
+        foreach (DimensionChange d in dimensionObjects)
         {
-            g.ChangeDimension(dimension);
+            d.dimensionChange();
         }
-        ChangeSprite[] spriteObjects = FindObjectsOfType<ChangeSprite>();
-        foreach (ChangeSprite s in spriteObjects)
-        {
-            s.changeSprite();
-        }
+        //GravityChange[] gravityObjects = FindObjectsOfType<GravityChange>();
+        //foreach (GravityChange g in gravityObjects)
+        //{
+        //    g.ChangeDimension(dimension);
+        //}
+        //ChangeSprite[] spriteObjects = FindObjectsOfType<ChangeSprite>();
+        //foreach (ChangeSprite s in spriteObjects)
+        //{
+        //    s.changeSprite();
+        //}
         camera.GetComponent<CameraCode>().SwitchDimension(dimension);
         for (int i = 1; i < dimensions.Count; i++)
         {

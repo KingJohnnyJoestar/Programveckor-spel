@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     int moveX = 0;
     BoxCollider2D boxColl;
     [SerializeField] LayerMask ground;
-    [SerializeField] int gameOverScene;
+    //[SerializeField] int gameOverScene;
     public Vector2 respawnPos;
     PlayerAnimation anim;
     int lastDirection;
@@ -157,14 +157,12 @@ public class PlayerMovement : MonoBehaviour
     }
     public bool touchingGround()
     {
-        //return true;
         Vector2 direction = Vector2.down;
         if(rb.gravityScale < 0)
         {
             direction = Vector2.up;
         }
         return Physics2D.BoxCast(boxColl.bounds.center, boxColl.bounds.size, 0f, direction, 0.1f, ground);
-        //return Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, ground);
     }
     public void die()
     {
