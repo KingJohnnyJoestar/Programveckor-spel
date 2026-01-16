@@ -14,12 +14,15 @@ public class Bomb : Item
     {
         if (active && collision.gameObject.tag != "Player")
         {
-            //döda fiender
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            //GetComponent<ResetPosition>().ResetPosition();
-            gameObject.SetActive(false);
-            active = false;
+            explode();
         }
     }
-
+    public void explode()
+    {
+        //döda fiender
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        //GetComponent<ResetPosition>().ResetPosition();
+        gameObject.SetActive(false);
+        active = false;
+    }
 }

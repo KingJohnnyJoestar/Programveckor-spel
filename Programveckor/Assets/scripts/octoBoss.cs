@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class octoBoss : ResetPosition
 {
@@ -22,9 +23,12 @@ public class octoBoss : ResetPosition
     public int tentacles;
     int tentaclesSpawned;
     public float tentacleSpeed;
-    public List<int> attacksUntilDamage;
+    public int attacksUntilDamage;
     int damageSpawnTimer;
     Vector2 spawnPos;
+    public GameObject bomb;
+    public Vector2 bombSpawn;
+    int bombSpawnDirection = 1;
     void Start()
     {
         ResetPos();
@@ -45,10 +49,10 @@ public class octoBoss : ResetPosition
                 rb.linearVelocity = new Vector2(0, 0);
                 resetAttack();
                 //tentacleTimer = 3;
-                goToXPos = 0;
+                goToXPos = 10000;
                 tentacleTimer = 2;
             }
-            else if (goToXPos == 0)
+            else if (goToXPos == 10000)
             {
                 goToXPos = player.transform.position.x;
                 if (goToXPos > transform.position.x)
@@ -89,6 +93,7 @@ public class octoBoss : ResetPosition
     }
     public override void ResetPos()
     {
+        goToXPos = 10000;
         base.ResetPos();
         hp = maxhp;
         nextAttack = 0;
@@ -99,5 +104,30 @@ public class octoBoss : ResetPosition
         damageSpawnTimer++;
         transform.position = spawnPos;
         rb.linearVelocity = new Vector2(0, 0);
+        if (damageSpawnTimer > attacksUntilDamage)
+        {
+            damageSpawnTimer = 0;
+            Instantiate(bomb, new Vector2(bombSpawn.x, bombSpawn.y), Quaternion.identity);
+            bombSpawnDirection = -bombSpawnDirection;
+        }
     }
+    public void damage()
+    {
+        base.ResetPos();
+        hp--;
+        Debug.Log("take damage");
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Bomb>())
+        {
+            Debug.Log("activate bomb");
+            collision.GetComponent<Bomb>().explode();
+        }
+    }
+
 }

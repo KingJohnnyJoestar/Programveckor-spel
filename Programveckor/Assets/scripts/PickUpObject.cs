@@ -29,6 +29,8 @@ public class PickUpObject : MonoBehaviour
         {
             if (carryItem != null && !cantDrop)
             {
+                coll.size = new Vector2(boxCollXSize, 1);
+                coll.offset = new Vector2(0, 0);
                 Debug.Log("drop " + carryItem.name);
                 carryItem.GetComponent<Item>().Drop();
                 if (Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed)
@@ -86,9 +88,9 @@ public class PickUpObject : MonoBehaviour
     }
     public void drop()
     {
-        carryItem = null;
         coll.size = new Vector2(boxCollXSize, 1);
         coll.offset = new Vector2(0, 0);
+        carryItem = null;
     }
     public void Reset()
     {

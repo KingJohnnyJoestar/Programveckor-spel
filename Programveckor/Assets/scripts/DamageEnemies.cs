@@ -8,6 +8,9 @@ public class DamageEnemies : MonoBehaviour
         if (collision.GetComponent<EnemyHealth>())
         {
             collision.GetComponent<EnemyHealth>().TakeDamage(damage);
+        }else if (collision.GetComponent<octoBoss>())
+        {
+            collision.GetComponent<octoBoss>().damage();
         }
     }
 }
