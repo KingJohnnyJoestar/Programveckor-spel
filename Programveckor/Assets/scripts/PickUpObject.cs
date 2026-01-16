@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,7 @@ public class PickUpObject : MonoBehaviour
     public float throwUpVelocity;
     BoxCollider2D coll;
     public float boxCollXSize;
+    int lastDirection;
     void Start()
     {
         coll = transform.GetChild(0).GetComponent<BoxCollider2D>();   
@@ -19,34 +21,41 @@ public class PickUpObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<PlayerMovement>().GetDirection() != 0)
+        {
+            lastDirection = GetComponent<PlayerMovement>().GetDirection();
+        }
         if (Keyboard.current.qKey.wasPressedThisFrame || Keyboard.current.cKey.wasPressedThisFrame)
         {
             if (carryItem != null && !cantDrop)
             {
                 Debug.Log("drop " + carryItem.name);
                 carryItem.GetComponent<Item>().Drop();
-                float upVelocity = throwVelocity.y;
-                if (GetComponent<PlayerMovement>().GetDirection() == 0)
+                if (Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed)
                 {
-                    upVelocity = throwUpVelocity;
+                    carryItem.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, throwUpVelocity);
                 }
-                carryItem.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(throwVelocity.x * GetComponent<PlayerMovement>().GetDirection(), upVelocity);
+                else
+                {
+                    carryItem.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(throwVelocity.x * lastDirection, throwVelocity.y);
+                }
                 drop();
             }
         }
         if (carryItem != null)
         {
-            if ((DimensionChanger.dimension == 2) == (coll.offset == new Vector2(0, 0.5f)))
-            {
-                if (DimensionChanger.dimension == 2)
-                {
-                    coll.offset = new Vector2(0, -0.5f);
-                }
-                else
-                {
-                    coll.offset = new Vector2(0, 0.5f);
-                }
-            }
+            //Debug.Log((DimensionChanger.dimension == 2) == (coll.offset == new Vector2(0, 0.5f)));
+            //if ((DimensionChanger.dimension == 2) == (coll.offset == new Vector2(0, 0.5f)))
+            //{
+            //    if (DimensionChanger.dimension == 2)
+            //    {
+            //        coll.offset = new Vector2(0, -0.5f);
+            //    }
+            //    else
+            //    {
+            //        coll.offset = new Vector2(0, 0.5f);
+            //    }
+            //}
             Vector2 itemPosition = transform.position;
             if (GetComponent<Rigidbody2D>().gravityScale > 0)
             {
@@ -65,9 +74,10 @@ public class PickUpObject : MonoBehaviour
         carryItem = item;
         cantDrop = true;
         coll.size = new Vector2(boxCollXSize,2);
+        coll.offset = new Vector2(0, 0.5f);
         if (DimensionChanger.dimension == 2)
         {
-            coll.offset = new Vector2(0, -0.5f);
+            //coll.offset = new Vector2(0, -0.5f);
         }
         else
         {

@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Final Scene.unity
-    guid: 7c09cae3901164244ad2712f1d911299
-  - enabled: 1
     path: Assets/Scenes/Hugo scene.unity
     guid: 95da3ca6152213a4fa9d7b69dbf2e8ed
+  - enabled: 1
+    path: Assets/Scenes/Final Scene.unity
+    guid: 7c09cae3901164244ad2712f1d911299
   - enabled: 1
     path: Assets/Scenes/Beta_WIN.unity
     guid: f9dbcd94553cbb346a01cf392b3be377

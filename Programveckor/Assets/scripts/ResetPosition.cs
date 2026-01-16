@@ -3,11 +3,13 @@ using UnityEngine;
 public class ResetPosition : MonoBehaviour
 {
     public Vector2 startPosition;
+    Vector3 startRotation;
     //public bool willReset = true;
     public bool deleteOnReset;
     private void Start()
     {
         startPosition = transform.position;
+        startRotation = new Vector3(Quaternion.identity.x, Quaternion.identity.z, Quaternion.identity.z); ;
     }
     public virtual void ResetPos()
     {
@@ -21,5 +23,6 @@ public class ResetPosition : MonoBehaviour
             Destroy(gameObject);
         }
         transform.position = startPosition;
+        Quaternion.Euler(startRotation);
     }
 }
