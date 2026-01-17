@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 10063926}
   - component: {fileID: 10063925}
   m_Layer: 0
-  m_Name: Die!!!
+  m_Name: player death barier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 1235259881}
   - component: {fileID: 1235259880}
   m_Layer: 0
-  m_Name: Boss!!!
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1660,7 +1660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1847374804246420899, guid: dcbd697fd2f86854abba81290ec4f67a, type: 3}
       propertyPath: m_Name
-      value: bomb
+      value: a
       objectReference: {fileID: 0}
     - target: {fileID: 7275978482154755885, guid: dcbd697fd2f86854abba81290ec4f67a, type: 3}
       propertyPath: explosion
