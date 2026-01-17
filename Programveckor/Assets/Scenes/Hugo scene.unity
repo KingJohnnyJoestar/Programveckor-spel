@@ -14050,7 +14050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   interactUI: {fileID: 1803550164}
-  collider: {fileID: 0}
   explosion: {fileID: 5173643944373684842, guid: 36a26768f73a5f2439e43c63d7b5f6b5, type: 3}
 --- !u!212 &783935848
 SpriteRenderer:
@@ -19377,7 +19376,7 @@ PrefabInstance:
       objectReference: {fileID: 645935410}
     - target: {fileID: 5506822105454806180, guid: 945c5a1aed3d09f4f8936e1bdb14c75c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 157
+      value: 157.5
       objectReference: {fileID: 0}
     - target: {fileID: 5506822105454806180, guid: 945c5a1aed3d09f4f8936e1bdb14c75c, type: 3}
       propertyPath: m_LocalPosition.y
