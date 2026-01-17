@@ -1660,7 +1660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1847374804246420899, guid: dcbd697fd2f86854abba81290ec4f67a, type: 3}
       propertyPath: m_Name
-      value: a
+      value: bomb
       objectReference: {fileID: 0}
     - target: {fileID: 7275978482154755885, guid: dcbd697fd2f86854abba81290ec4f67a, type: 3}
       propertyPath: explosion
