@@ -110,8 +110,8 @@ MonoBehaviour:
   Enemy: {fileID: 6180041694993026692}
   Player: {fileID: 0}
   speed: 0.005
-  EnemyrAlertDistance: 5
-  EnemyChasseMaxDistance: 10
+  EnemyrAlertDistance: 10
+  EnemyChasseMaxDistance: 15
 --- !u!58 &9080385977730971915
 CircleCollider2D:
   m_ObjectHideFlags: 0
