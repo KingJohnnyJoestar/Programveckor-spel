@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.44}
+    oldSize: {x: 0.96, y: 0.88}
     newSize: {x: 0.8828125, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,8 +158,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  teleportPosition: {x: 0, y: 0}
+  teleportOffset: {x: 0, y: 0}
+  teleportObject: {fileID: 0}
   becomeSpecifikDimension: 0
+  startDimension: 0
 --- !u!114 &3964468329002776369
 MonoBehaviour:
   m_ObjectHideFlags: 0
